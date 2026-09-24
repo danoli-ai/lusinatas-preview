@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Loja · Lusinatas</title>
-<meta name="description" content="Peça pastéis de nata da Lusinatas: com ou sem canela, de um a vinte e quatro, mini pastéis para eventos, vinhos e bebidas. Retirada na loja ou entrega em Joinville.">
+<meta name="description" content="Peça pastéis de nata da Lusinatas com entrega em Joinville: com ou sem canela, de um a vinte e quatro, mini pastéis para eventos, vinhos e bebidas.">
 <link rel="icon" href="https://lusinatas.com/wp-content/uploads/2025/08/cropped-favicon-270x270.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="stylesheet" href="style.css">
+<script>window.dataLayer=window.dataLayer||[];</script><!-- GTM: <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-XXXXXXX");</script> --><script src="app.js"></script>
 </head>
 <body>
 <header class="topo">
@@ -24,340 +25,374 @@
   </div>
 </header>
 <main><script>window.LUSINATAS_FOTOS={"nata-1": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_033549_3c0c4957-78ac-4ae2-9091-fe9acf5e275a.png", "nata-3": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_033818_eae302f6-88a8-42d7-beda-61edb169c5de.png", "nata-6": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034043_ef8b9951-ded4-4fdb-97ae-d152a67643ff.png", "nata-12": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034308_0fc5e784-3bbc-43c2-ab92-61d58ed3d3ab.png", "nata-24": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034527_c241c61b-6b67-4251-90f7-f8922c3c8064.png", "minis": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034746_716f6c5d-e4cc-44e6-9889-2928e6cd1d33.png", "moscatel": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_035013_a15ae5e5-23ca-4c57-a36d-189826291f60.png", "porto": "https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_035249_6a1fbe05-b8d5-41cc-9734-56d88d75e72c.png"};</script>
-<section class="heroi-int heroi-curto heroi-loja">
-  <div class="wrap">
-    <div class="stack">
-      <p class="eyebrow">Loja</p>
-      <h1>Peça a sua nata.</h1>
-      <p class="lead">Escolha a quantidade e a canela, diga onde e quando, e o pedido segue pelo WhatsApp já escrito. Retirada na loja ou entrega em Joinville, grátis a partir de R$ 250.</p>
+<div class="app" id="app">
+
+  <!-- ===== ecrã: loja ===== -->
+  <section class="ecra" data-ecra="inicio">
+    <header class="app-topo">
+      <button type="button" class="morada-btn" id="morada-btn" aria-label="Mudar endereço de entrega">
+        <small id="topo-modo">Entregar em</small>
+        <b id="topo-morada">Rua Otto Boehm, 525 · Atiradores</b>
+        <span class="seta">▾</span>
+      </button>
+      <div class="eta-chip"><b id="topo-eta">25–35 min</b><span>Entrega grátis a partir de R$ 250</span></div>
+    </header>
+
+    <div class="loja-cartao">
+      <div class="loja-logo"><img src="https://lusinatas.com/wp-content/uploads/2025/08/logo-lusinatas-creme.png" alt="Lusinatas" width="428" height="138"></div>
+      <div class="loja-meta">
+        <h1>Lusinatas · Joinville</h1>
+        <p><span class="estrela">★ 4,9</span> · 312 avaliações · <span class="aberto">Aberto</span> · fecha às 22h</p>
+        <p class="loja-sub">Pedido mínimo R$ 12 · Pastel de nata português</p>
+      </div>
     </div>
-    <ol class="como">
-      <li><b>1</b><span>Escolha</span><small>Nata, minis, vinhos e bebidas</small></li>
-      <li><b>2</b><span>Onde e quando</span><small>Retirada ou entrega, hoje ou agendado</small></li>
-      <li><b>3</b><span>Envie</span><small>Pix, cartão ou dinheiro, combinado no WhatsApp</small></li>
-    </ol>
+
+    <nav class="cats" aria-label="Categorias">
+      <a href="#loja/inicio" data-cat="pasteis" class="ativa">Pastéis</a>
+      <a href="#loja/inicio" data-cat="eventos">Eventos</a>
+      <a href="#loja/inicio" data-cat="vinhos">Vinhos</a>
+      <a href="#loja/inicio" data-cat="bebidas">Bebidas</a>
+    </nav>
+
+    <div class="destaque-fornada">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034043_ef8b9951-ded4-4fdb-97ae-d152a67643ff.png" alt="" width="1200" height="900" loading="lazy">
+      <div><span class="label">Agora no forno</span><b>Fornada das 15h a sair</b><span>Peça já e recebe quentinho</span></div>
+    </div>
+
+    <section class="cat-sec" id="cat-pasteis">
+      <h2>Pastéis de nata</h2>
+      <ul class="lista-prod" id="lista-pasteis"></ul>
+    </section>
+    <section class="cat-sec" id="cat-eventos">
+      <h2>Para eventos <small>sob agendamento</small></h2>
+      <ul class="lista-prod" id="lista-eventos"></ul>
+    </section>
+    <section class="cat-sec" id="cat-vinhos">
+      <h2>Vinhos para acompanhar</h2>
+      <ul class="lista-prod" id="lista-vinhos"></ul>
+    </section>
+    <section class="cat-sec" id="cat-bebidas">
+      <h2>Bebidas</h2>
+      <ul class="lista-prod" id="lista-bebidas"></ul>
+    </section>
+    <p class="nota app-nota">Preços do cardápio online em setembro de 2026. Demonstração: nenhum pedido é enviado.</p>
+  </section>
+
+  <!-- ===== ecrã: sacola ===== -->
+  <section class="ecra" data-ecra="sacola" hidden>
+    <header class="passo-topo"><button type="button" class="voltar" data-voltar="inicio" aria-label="Voltar">‹</button><h2>Sacola</h2><span></span></header>
+    <div class="sacola-loja"><img src="https://lusinatas.com/wp-content/uploads/2025/08/logo-lusinatas-creme.png" alt="" width="428" height="138"><div><b>Lusinatas · Joinville</b><span id="sacola-eta">Entrega em 25–35 min</span></div></div>
+    <ul class="linhas" id="sacola-linhas"></ul>
+    <a class="mais-itens" href="#loja/inicio">+ Adicionar mais itens</a>
+    <div class="resumo">
+      <div><span>Subtotal</span><b id="r-subtotal">R$ 0,00</b></div>
+      <div><span>Taxa de entrega</span><b id="r-taxa">R$ 7,90</b></div>
+      <div class="total"><span>Total</span><b id="r-total">R$ 0,00</b></div>
+      <p class="mini-nota" id="r-nota">Faltam R$ 0,00 para a entrega grátis.</p>
+    </div>
+    <div class="passo-pe"><button class="btn btn-ouro btn-largo" type="button" id="ir-endereco">Escolher endereço</button></div>
+  </section>
+
+  <!-- ===== ecrã: endereço ===== -->
+  <section class="ecra" data-ecra="endereco" hidden>
+    <header class="passo-topo"><button type="button" class="voltar" data-voltar="sacola" aria-label="Voltar">‹</button><h2>Onde entregar?</h2><span></span></header>
+    <div class="chips chips-2 modo-chips">
+      <label><input type="radio" name="modo" id="modo-entrega" value="Entrega" checked><span>Entrega</span></label>
+      <label><input type="radio" name="modo" id="modo-retirada" value="Retirada"><span>Retirar na loja</span></label>
+    </div>
+    <div id="bloco-entrega">
+      <ul class="moradas" id="moradas"></ul>
+      <div class="campos">
+        <label class="campo campo-2"><span class="label">Rua e número</span><input type="text" id="rua" placeholder="Rua, número" autocomplete="street-address"></label>
+        <label class="campo"><span class="label">Bairro</span><input type="text" id="bairro" placeholder="Bairro"></label>
+        <label class="campo"><span class="label">CEP</span><input type="text" id="cep" placeholder="89000-000" inputmode="numeric"></label>
+        <label class="campo campo-2"><span class="label">Complemento e referência</span><input type="text" id="compl" placeholder="Apto, bloco, ponto de referência"></label>
+      </div>
+      <div class="eta-caixa" id="eta-caixa"><b>Voa Delivery</b><span id="eta-texto">A calcular…</span></div>
+    </div>
+    <div id="bloco-retirada" hidden>
+      <div class="caixa"><b>Rua Otto Boehm, 525 · Atiradores</b><span class="mini-nota">Seg a sex 09h–22h · dom 10h–22h. A nata fica pronta em <b>15 min</b>.</span></div>
+    </div>
+    <div class="passo-pe"><button class="btn btn-ouro btn-largo" type="button" id="ir-entrar">Continuar</button></div>
+  </section>
+
+  <!-- ===== ecrã: entrar ===== -->
+  <section class="ecra" data-ecra="entrar" hidden>
+    <header class="passo-topo"><button type="button" class="voltar" data-voltar="endereco" aria-label="Voltar">‹</button><h2>Entrar</h2><span></span></header>
+    <div id="entrar-tel">
+      <p class="lede">Só o seu telemóvel. Sem senha.</p>
+      <div class="campos">
+        <label class="campo campo-2"><span class="label">Nome</span><input type="text" id="nome" placeholder="Como devemos chamar?" autocomplete="name"></label>
+        <label class="campo campo-2"><span class="label">WhatsApp</span><input type="tel" id="tel" placeholder="(47) 9 9999-9999" inputmode="tel" autocomplete="tel"></label>
+      </div>
+      <p class="mini-nota">Enviamos um código por WhatsApp para confirmar. Depois é só voltar: reconhecemos o número.</p>
+      <div class="passo-pe"><button class="btn btn-ouro btn-largo" type="button" id="pedir-codigo">Receber código</button></div>
+    </div>
+    <div id="entrar-codigo" hidden>
+      <p class="lede">Digite o código que chegou no WhatsApp.</p>
+      <div class="codigo" id="codigo">
+        <input inputmode="numeric" maxlength="1" aria-label="dígito 1"><input inputmode="numeric" maxlength="1" aria-label="dígito 2"><input inputmode="numeric" maxlength="1" aria-label="dígito 3"><input inputmode="numeric" maxlength="1" aria-label="dígito 4"><input inputmode="numeric" maxlength="1" aria-label="dígito 5"><input inputmode="numeric" maxlength="1" aria-label="dígito 6">
+      </div>
+      <p class="mini-nota">Demonstração: qualquer código serve. <button type="button" class="ligacao-btn" id="reenviar">Reenviar</button></p>
+      <div class="passo-pe"><button class="btn btn-ouro btn-largo" type="button" id="confirmar-codigo">Confirmar</button></div>
+    </div>
+  </section>
+
+  <!-- ===== ecrã: pagamento ===== -->
+  <section class="ecra" data-ecra="pagamento" hidden>
+    <header class="passo-topo"><button type="button" class="voltar" data-voltar="entrar" aria-label="Voltar">‹</button><h2>Pagamento</h2><span></span></header>
+    <div class="pag-resumo"><span id="pag-itens">0 itens</span><b id="pag-total">R$ 0,00</b></div>
+    <div class="chips chips-3 pag-chips">
+      <label><input type="radio" name="pag" value="Pix" checked><span>Pix</span></label>
+      <label><input type="radio" name="pag" value="Cartão" disabled><span>Cartão <small>em breve</small></span></label>
+      <label><input type="radio" name="pag" value="Na entrega" disabled><span>Na entrega <small>em breve</small></span></label>
+    </div>
+    <div class="pix" id="pix">
+      <div class="pix-qr" id="pix-qr"></div>
+      <div class="pix-info">
+        <b>Escaneie ou copie o código</b>
+        <span>Válido por <b id="pix-tempo">5:00</b>. O pedido entra no forno assim que o banco confirmar.</span>
+        <button class="btn btn-navy btn-largo" type="button" id="pix-copiar">Copiar código Pix</button>
+        <p class="pix-estado" id="pix-estado"><span class="pulsar"></span> A aguardar pagamento…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== barra da sacola ===== -->
+  <div class="sacola-bar" id="sacola-bar" hidden>
+    <span id="sacola-bar-n">0 itens</span>
+    <button class="btn btn-ouro" type="button" id="sacola-bar-btn">Ver sacola · <b id="sacola-bar-total">R$ 0,00</b></button>
   </div>
-</section>
 
-<section class="seccao loja-online">
-  <div class="wrap">
-
-    <article class="config" id="config-nata">
-      <div class="config-foto">
-        <img id="nata-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034043_ef8b9951-ded4-4fdb-97ae-d152a67643ff.png" width="1200" height="900" alt="Caixa com seis pastéis de nata" decoding="async">
-        <span class="selo" id="nata-selo">Caixa de 6</span>
-      </div>
-      <div class="config-corpo">
-        <span class="label">O pastel</span>
-        <h2>Pastel de nata</h2>
-        <p class="produto-desc">Massa folhada crocante, creme de ovos macio, topo caramelizado. Sai do forno ao longo do dia; a caixa vai fechada e quentinha.</p>
-
-        <fieldset class="opcoes">
-          <legend class="label">Quantos?</legend>
-          <div class="chips chips-qtd" id="nata-qtd">
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-1" value="1"><span><b>1</b><small>R$ 12,00</small></span></label>
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-3" value="3"><span><b>3</b><small>R$ 34,50</small></span></label>
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-4" value="4"><span><b>4</b><small>R$ 46,00</small></span></label>
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-6" value="6" checked><span><b>6</b><small>R$ 69,00</small></span></label>
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-12" value="12"><span><b>12</b><small>R$ 138,00</small></span></label>
-            <label><input type="radio" name="nata-qtd" id="nata-qtd-24" value="24"><span><b>24</b><small>R$ 264,00</small></span></label>
-          </div>
-          <p class="dica" id="nata-dica"></p>
-        </fieldset>
-
-        <fieldset class="opcoes">
-          <legend class="label">Canela</legend>
-          <div class="chips chips-2">
-            <label><input type="radio" name="nata-canela" id="nata-canela-com" value="com canela" checked><span>Com canela polvilhada</span></label>
-            <label><input type="radio" name="nata-canela" id="nata-canela-sem" value="sem canela"><span>Sem canela</span></label>
-          </div>
-        </fieldset>
-
-        <div class="config-acao">
-          <div class="config-preco"><span class="preco" id="nata-preco">R$ 69,00</span><small id="nata-unit">R$ 11,50 cada</small></div>
-          <div class="stepper" aria-label="Quantas caixas"><button type="button" id="nata-menos" aria-label="Menos uma caixa">−</button><b id="nata-caixas">1</b><button type="button" id="nata-mais" aria-label="Mais uma caixa">+</button></div>
-          <button class="btn btn-navy" type="button" id="nata-add">Adicionar ao pedido</button>
-        </div>
-      </div>
-    </article>
-
-    <div class="grupo-cab"><h2 class="grupo-titulo">Para eventos</h2><span class="etiqueta">sob agendamento</span></div>
-    <div class="cards-prod">
-      <article class="prod" data-img="minis" data-id="mini50" data-nome="50 mini pastéis de nata (agendamento)" data-preco="325">
-        <div class="prod-foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034746_716f6c5d-e4cc-44e6-9889-2928e6cd1d33.png" width="1200" height="900" alt="Tabuleiro de mini pastéis de nata" loading="lazy" decoding="async"></div>
-        <div class="prod-corpo">
-          <h3>50 mini pastéis</h3>
-          <p class="produto-desc">Para festas a partir de 10 pessoas. Encomende com alguns dias de antecedência.</p>
-          <div class="prod-acao"><span class="preco">R$ 325,00</span><span class="acao-slot"></span></div>
-        </div>
-      </article>
-      <article class="prod" data-img="minis" data-id="mini100" data-nome="100 mini pastéis de nata (agendamento)" data-preco="625">
-        <div class="prod-foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034746_716f6c5d-e4cc-44e6-9889-2928e6cd1d33.png" width="1200" height="900" alt="Tabuleiro de mini pastéis de nata" loading="lazy" decoding="async"></div>
-        <div class="prod-corpo">
-          <h3>100 mini pastéis</h3>
-          <p class="produto-desc">Para festas a partir de 25 pessoas. Encomende com alguns dias de antecedência.</p>
-          <div class="prod-acao"><span class="preco">R$ 625,00</span><span class="acao-slot"></span></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="grupo-cab"><h2 class="grupo-titulo">Para acompanhar</h2><span class="etiqueta">o par da nata</span></div>
-    <div class="cards-prod">
-      <article class="prod" data-img="moscatel" data-id="moscatel" data-nome="Moscatel de Setúbal Reserva (garrafa)" data-preco="199">
-        <div class="prod-foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_035013_a15ae5e5-23ca-4c57-a36d-189826291f60.png" width="1200" height="900" alt="Copo de Moscatel de Setúbal ao lado de um pastel de nata" loading="lazy" decoding="async"></div>
-        <div class="prod-corpo">
-          <h3>Moscatel de Setúbal Reserva</h3>
-          <p class="produto-desc">Vinho licoroso, feito como o vinho do Porto. Na nossa opinião, o par perfeito da nata. Garrafa.</p>
-          <div class="prod-acao"><span class="preco">R$ 199,00</span><span class="acao-slot"></span></div>
-        </div>
-      </article>
-      <article class="prod" data-img="porto" data-id="porto" data-nome="Vinho do Porto Branco (garrafa)" data-preco="199">
-        <div class="prod-foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_035249_6a1fbe05-b8d5-41cc-9734-56d88d75e72c.png" width="1200" height="900" alt="Copo de vinho do Porto branco ao lado de um pastel de nata" loading="lazy" decoding="async"></div>
-        <div class="prod-corpo">
-          <h3>Vinho do Porto Branco</h3>
-          <p class="produto-desc">Fresco, para momentos especiais. Lembra as origens do vinho do Porto. Garrafa.</p>
-          <div class="prod-acao"><span class="preco">R$ 199,00</span><span class="acao-slot"></span></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="grupo-cab"><h2 class="grupo-titulo">Bebidas</h2></div>
-    <ul class="bebidas">
-      <li class="prod" data-id="agua" data-nome="Água sem gás 500 ml" data-preco="5.99"><span>Água sem gás 500 ml</span><span class="preco">R$ 5,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="coca250" data-nome="Coca-Cola vidro 250 ml" data-preco="8.99"><span>Coca-Cola garrafa de vidro 250 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="coca350" data-nome="Coca-Cola 350 ml" data-preco="8.99"><span>Coca-Cola 350 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="cocazero" data-nome="Coca-Cola Zero 350 ml" data-preco="8.99"><span>Coca-Cola Zero 350 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="sprite" data-nome="Sprite Limão 350 ml" data-preco="8.99"><span>Sprite Limão 350 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="spritezero" data-nome="Sprite Zero 350 ml" data-preco="8.99"><span>Sprite Zero 350 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-      <li class="prod" data-id="fanta" data-nome="Fanta Laranja 350 ml" data-preco="8.99"><span>Fanta Laranja 350 ml</span><span class="preco">R$ 8,99</span><span class="acao-slot"></span></li>
-    </ul>
-
-    <div class="rever" id="rever" hidden>
-      <div><b id="rever-titulo">0 itens</b><span id="rever-sub">R$ 0,00 · retirada na loja</span></div>
-      <button class="btn btn-ouro" type="button" id="rever-btn">Rever e enviar o pedido</button>
-    </div>
-    <p class="nota">Preços do cardápio online em setembro de 2026. A loja abre às 09h00; pedidos fora do horário ficam agendados para a próxima fornada.</p>
-  </div>
-
-  <!-- gaveta do pedido -->
-  <div class="gaveta-fundo" id="gaveta-fundo" hidden></div>
-  <aside class="gaveta" id="gaveta" aria-label="O seu pedido" aria-hidden="true">
-    <div class="gaveta-topo">
-      <div><span class="label">O seu pedido</span><h2 id="gaveta-n">0 itens</h2></div>
-      <button class="fechar" type="button" id="gaveta-fechar" aria-label="Fechar">×</button>
-    </div>
-    <div class="gaveta-corpo">
-      <div class="vazio" id="vazio">
-        <img src="https://lusinatas.com/wp-content/uploads/2025/09/lusinatas-pasteis-de-nata-sobre.webp" width="800" height="600" alt="" loading="lazy">
-        <p>Ainda não há nada no pedido.</p>
-        <button class="btn btn-navy" type="button" id="vazio-btn">Começar pela nata</button>
-      </div>
-
-      <section class="passo" id="passo-itens">
-        <h3><i>1</i> Itens</h3>
-        <ul class="linhas" id="linhas"></ul>
-        <div class="entrega-gratis" id="entrega-gratis" hidden><div class="barra"><span id="barra-fill"></span></div><p id="barra-texto"></p></div>
-        <div class="sugestao" id="sugestao" hidden>
-          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_035013_a15ae5e5-23ca-4c57-a36d-189826291f60.png" width="1200" height="900" alt="" loading="lazy">
-          <div><b>Junte um Moscatel de Setúbal</b><span>O par clássico da nata em Portugal · R$ 199,00</span></div>
-          <button class="btn btn-linha" type="button" id="sugestao-btn">Juntar</button>
-        </div>
-      </section>
-
-      <section class="passo" id="passo-entrega">
-        <h3><i>2</i> Onde e quando</h3>
+  <!-- ===== ficha do produto (folha) ===== -->
+  <div class="folha-fundo" id="folha-fundo" hidden></div>
+  <div class="folha" id="folha" aria-hidden="true">
+    <button type="button" class="folha-fechar" id="folha-fechar" aria-label="Fechar">×</button>
+    <div class="folha-foto"><img id="folha-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3JI065IiZ4TeF2CxczMBn6bcYWH/hf_20260923_034043_ef8b9951-ded4-4fdb-97ae-d152a67643ff.png" alt="" width="1200" height="900"></div>
+    <div class="folha-corpo">
+      <h2 id="folha-nome"></h2>
+      <p class="produto-desc" id="folha-desc"></p>
+      <fieldset class="opcoes" id="folha-tiers" hidden>
+        <legend class="label">Quantos pastéis?</legend>
+        <div class="chips chips-qtd" id="folha-tiers-chips"></div>
+        <p class="dica" id="folha-dica"></p>
+      </fieldset>
+      <fieldset class="opcoes" id="folha-canela" hidden>
+        <legend class="label">Canela</legend>
         <div class="chips chips-2">
-          <label><input type="radio" name="modo" id="modo-retirada" value="Retirada na loja" checked><span>Retiro na loja</span></label>
-          <label><input type="radio" name="modo" id="modo-entrega" value="Entrega"><span>Entrega em Joinville</span></label>
+          <label><input type="radio" name="f-canela" value="com canela" checked><span>Com canela polvilhada</span></label>
+          <label><input type="radio" name="f-canela" value="sem canela"><span>Sem canela</span></label>
         </div>
-        <p class="mini-nota" id="modo-nota">Rua Otto Boehm, 525 · Atiradores. Seg a sex 09h–22h, dom 10h–22h.</p>
-        <div class="campos" id="campos-morada" hidden>
-          <label class="campo campo-2"><span class="label">Rua e número</span><input type="text" id="rua" placeholder="Rua, número" autocomplete="street-address"></label>
-          <label class="campo"><span class="label">Bairro</span><input type="text" id="bairro" placeholder="Bairro"></label>
-          <label class="campo"><span class="label">Complemento</span><input type="text" id="compl" placeholder="Apto, bloco, referência"></label>
-        </div>
-        <span class="label">Quando</span>
-        <div class="chips chips-quando" id="quando">
-          <label><input type="radio" name="quando" id="quando-cedo" value="O mais cedo possível" checked><span>O mais cedo possível</span></label>
-          <label><input type="radio" name="quando" id="quando-hoje-12" value="Hoje às 12h"><span>Hoje 12h</span></label>
-          <label><input type="radio" name="quando" id="quando-hoje-18" value="Hoje às 18h"><span>Hoje 18h</span></label>
-          <label><input type="radio" name="quando" id="quando-amanha" value="Amanhã de manhã"><span>Amanhã de manhã</span></label>
-          <label><input type="radio" name="quando" id="quando-outro" value="outro"><span>Outra hora</span></label>
-        </div>
-        <label class="campo" id="campo-quando" hidden><span class="label">Diga o dia e a hora</span><input type="text" id="quando-texto" placeholder="Sábado às 16h, dia 30 de manhã…"></label>
-      </section>
-
-      <section class="passo" id="passo-pagamento">
-        <h3><i>3</i> Pagamento e nome</h3>
-        <div class="chips chips-3">
-          <label><input type="radio" name="pag" id="pag-pix" value="Pix" checked><span>Pix</span></label>
-          <label><input type="radio" name="pag" id="pag-cartao" value="Cartão na entrega/loja"><span>Cartão</span></label>
-          <label><input type="radio" name="pag" id="pag-dinheiro" value="Dinheiro"><span>Dinheiro</span></label>
-        </div>
-        <p class="mini-nota" id="pag-nota">A chave Pix chega na resposta do WhatsApp. O pedido entra no forno quando o pagamento é confirmado.</p>
-        <div class="campos">
-          <label class="campo"><span class="label">Seu nome</span><input type="text" id="nome" placeholder="Como devemos chamar?" autocomplete="name"></label>
-          <label class="campo"><span class="label">Observações</span><input type="text" id="obs" placeholder="Opcional"></label>
-        </div>
-      </section>
+      </fieldset>
+      <label class="campo"><span class="label">Alguma observação?</span><input type="text" id="folha-obs" placeholder="Ex.: sem canela numa metade, presente com cartão…"></label>
     </div>
-    <div class="gaveta-pe" id="gaveta-pe">
-      <div class="totais"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
-      <p class="mini-nota" id="taxa-nota">Entrega grátis a partir de R$ 250. Abaixo disso a taxa é confirmada no WhatsApp.</p>
-      <button class="btn btn-ouro btn-largo" type="button" id="enviar" disabled>Enviar pedido pelo WhatsApp</button>
-      <a class="ligacao-peq" href="https://app.cardapioweb.com/lusinatas" target="_blank" rel="noopener">Prefere pagar online já? Use o app</a>
+    <div class="folha-pe">
+      <span class="stepper"><button type="button" id="folha-menos" aria-label="Menos">−</button><b id="folha-qtd">1</b><button type="button" id="folha-mais" aria-label="Mais">+</button></span>
+      <button class="btn btn-navy" type="button" id="folha-add">Adicionar · <b id="folha-preco">R$ 0,00</b></button>
     </div>
-  </aside>
-
-  <div class="toast" id="toast" hidden><span id="toast-texto"></span><button type="button" id="toast-btn">Ver pedido</button></div>
-  <div class="barra-movel" id="barra-movel" hidden>
-    <span id="barra-movel-texto">0 itens · R$ 0,00</span>
-    <button class="btn btn-ouro" type="button" id="barra-movel-ver">Ver pedido</button>
   </div>
-</section>
+
+  <!-- ===== folha: mudar morada no topo ===== -->
+  <div class="folha folha-morada" id="folha-morada" aria-hidden="true">
+    <button type="button" class="folha-fechar" data-fechar="folha-morada" aria-label="Fechar">×</button>
+    <div class="folha-corpo">
+      <h2>Onde está?</h2>
+      <ul class="moradas" id="moradas-topo"></ul>
+      <p class="mini-nota">Joinville · Atiradores e bairros próximos. Sua cidade ainda não? <a href="franquia.html">Leve a Lusinatas para lá.</a></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden><span id="toast-texto"></span><button type="button" id="toast-btn">Ver sacola</button></div>
+</div>
 
 <script>
 (function(){
+  var L=window.Lusi; if(!L||!document.getElementById('app')) return;
+  var q=function(id){return document.getElementById(id);};
   var NATA={1:12,3:34.5,4:46,6:69,12:138,24:264};
   var IMG={1:'nata-1',3:'nata-3',4:'nata-3',6:'nata-6',12:'nata-12',24:'nata-24'};
-  var WA='https://wa.me/5547992024741', GRATIS=250, CHAVE='lusinatas-pedido';
-  var raiz=document.getElementById('config-nata'); if(!raiz) return;
   function foto(n){ var m=window.LUSINATAS_FOTOS||{}; return m[n]||('assets/loja/'+n+'.webp'); }
-  function q(id){ return document.getElementById(id); }
-  function brl(v){ return 'R$ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
-  var pedido=[]; try{ var g=localStorage.getItem(CHAVE); if(g) pedido=JSON.parse(g)||[]; }catch(e){}
-  function guardar(){ try{ localStorage.setItem(CHAVE,JSON.stringify(pedido)); }catch(e){} document.dispatchEvent(new CustomEvent('lusinatas:pedido')); }
-  function linha(id){ return pedido.find(function(x){return x.id===id;}); }
-  function definir(id,nome,preco,qtd,img){
-    var l=linha(id);
-    if(qtd<=0){ if(l) pedido.splice(pedido.indexOf(l),1); }
-    else if(l){ l.qtd=qtd; } else { pedido.push({id:id,nome:nome,preco:preco,qtd:qtd,img:img||''}); }
-    guardar(); render();
+  var PRODUTOS=[
+    {id:'nata',cat:'pasteis',nome:'Pastel de nata',desc:'Massa folhada crocante, creme de ovos macio, topo caramelizado. Com ou sem canela.',preco:12,img:'nata-6',tiers:true,de:'a partir de R$ 11,00 cada'},
+    {id:'mini50',cat:'eventos',nome:'50 mini pastéis',desc:'Para festas a partir de 10 pessoas. Sob agendamento.',preco:325,img:'minis'},
+    {id:'mini100',cat:'eventos',nome:'100 mini pastéis',desc:'Para festas a partir de 25 pessoas. Sob agendamento.',preco:625,img:'minis'},
+    {id:'moscatel',cat:'vinhos',nome:'Moscatel de Setúbal Reserva',desc:'Vinho licoroso, o par clássico da nata. Garrafa.',preco:199,img:'moscatel'},
+    {id:'porto',cat:'vinhos',nome:'Vinho do Porto Branco',desc:'Fresco, para momentos especiais. Garrafa.',preco:199,img:'porto'},
+    {id:'agua',cat:'bebidas',nome:'Água sem gás 500 ml',desc:'',preco:5.99},
+    {id:'coca250',cat:'bebidas',nome:'Coca-Cola vidro 250 ml',desc:'',preco:8.99},
+    {id:'coca350',cat:'bebidas',nome:'Coca-Cola 350 ml',desc:'',preco:8.99},
+    {id:'cocazero',cat:'bebidas',nome:'Coca-Cola Zero 350 ml',desc:'',preco:8.99},
+    {id:'sprite',cat:'bebidas',nome:'Sprite Limão 350 ml',desc:'',preco:8.99},
+    {id:'spritezero',cat:'bebidas',nome:'Sprite Zero 350 ml',desc:'',preco:8.99},
+    {id:'fanta',cat:'bebidas',nome:'Fanta Laranja 350 ml',desc:'',preco:8.99}
+  ];
+  var MORADAS_DEMO=[{rua:'Rua Otto Boehm, 525',bairro:'Atiradores',cep:'89203-070',compl:'Loja Lusinatas',eta:'15 min'},{rua:'Rua Blumenau, 1200',bairro:'América',cep:'89204-250',compl:'Apto 302',eta:'25–35 min'}];
+  var TAXA=7.9, GRATIS=250;
+
+  var estado=L.ler('lusinatas-app',{sacola:[],modo:'Entrega',morada:MORADAS_DEMO[1],cliente:null});
+  function guardar(){ L.gravar('lusinatas-app',estado); }
+  function totais(){ var s=0,n=0; estado.sacola.forEach(function(l){s+=l.preco*l.qtd;n+=l.qtd;}); var taxa=estado.modo==='Retirada'?0:(s>=GRATIS||s===0?0:TAXA); return {sub:s,n:n,taxa:taxa,total:s+taxa}; }
+  function itensGA(){ return estado.sacola.map(function(l){return {item_id:l.id,item_name:l.nome,price:l.preco,quantity:l.qtd};}); }
+
+  /* ---------- navegação por ecrãs (hash #loja/<ecra> no preview, #<ecra> no site) ---------- */
+  function ecraDoHash(){ var h=location.hash.slice(1); if(!h) return 'inicio'; var p=h.split('/'); var e=p.length>1?p[p.length-1]:(p[0]==='loja'?'inicio':p[0]); return document.querySelector('[data-ecra="'+e+'"]')?e:'inicio'; }
+  function hashPara(ecra){ var h=location.hash.slice(1).split('/')[0]; return (h==='loja'?'#loja/':'#')+ecra; }
+  function ir(ecra){ if(ecraDoHash()!==ecra) location.hash=hashPara(ecra); else mostrar(); }
+  function mostrar(){
+    var e=ecraDoHash();
+    document.querySelectorAll('.ecra').forEach(function(s){ s.hidden=s.dataset.ecra!==e; });
+    q('sacola-bar').hidden=!(e==='inicio'&&estado.sacola.length);
+    window.scrollTo(0,0);
+    if(e==='pagamento') iniciarPix();
+    if(e==='sacola') L.rastrear('view_cart',{value:totais().sub,items:itensGA()});
   }
-  function totais(){ var t=0,n=0; pedido.forEach(function(l){ t+=l.preco*l.qtd; n+=l.qtd; }); return {t:t,n:n}; }
-  function itens(n){ return n+(n===1?' item':' itens'); }
+  window.addEventListener('hashchange',mostrar);
+  document.querySelectorAll('.voltar').forEach(function(b){ b.addEventListener('click',function(){ ir(b.dataset.voltar); }); });
 
-  /* ----- configurador da nata ----- */
-  var caixas=1;
-  function nataQtd(){ var r=document.querySelector('input[name="nata-qtd"]:checked'); return r?+r.value:6; }
-  function nataCanela(){ var r=document.querySelector('input[name="nata-canela"]:checked'); return r?r.value:'com canela'; }
-  function atualizarNata(){
-    var n=nataQtd(), p=NATA[n], unit=p/n, poupa=(12*n-p);
-    q('nata-preco').textContent=brl(p*caixas);
-    q('nata-unit').textContent=brl(unit)+' cada'+(poupa>0?' · poupa '+brl(poupa*caixas):'');
-    q('nata-dica').textContent = n===1 ? 'Um pastel, para provar. A partir de 3 cada um sai a R$ 11,50.' :
-      n===24 ? 'Caixa de festa: cada pastel a R$ 11,00.' : 'Cada pastel sai a R$ 11,50.';
-    q('nata-caixas').textContent=caixas;
-    q('nata-selo').textContent = n===1 ? '1 pastel' : 'Caixa de '+n;
-    var img=q('nata-img'); var src=foto(IMG[n]);
-    if(img.getAttribute('src')!==src){ img.classList.add('troca'); img.setAttribute('src',src); img.alt=(n===1?'Um pastel de nata':'Caixa com '+n+' pastéis de nata'); setTimeout(function(){img.classList.remove('troca');},350); }
+  /* ---------- listas de produtos ---------- */
+  function linhaProduto(p){
+    var li=document.createElement('li'); li.className='prod-row';
+    li.innerHTML='<button type="button" class="prod-abrir"><span class="prod-txt"><b></b><small></small><em></em></span>'+(p.img?'<span class="prod-thumb"><img alt="" loading="lazy"></span>':'')+'</button><span class="prod-qtd" hidden></span>';
+    li.querySelector('b').textContent=p.nome; li.querySelector('small').textContent=p.desc; li.querySelector('em').textContent=p.tiers?p.de:L.brl(p.preco);
+    if(p.img) li.querySelector('img').src=foto(p.img);
+    li.querySelector('.prod-abrir').addEventListener('click',function(){ abrirFolha(p); });
+    li.dataset.id=p.id; return li;
   }
-  document.querySelectorAll('input[name="nata-qtd"]').forEach(function(i){ i.addEventListener('change',atualizarNata); });
-  q('nata-menos').addEventListener('click',function(){ caixas=Math.max(1,caixas-1); atualizarNata(); });
-  q('nata-mais').addEventListener('click',function(){ caixas=Math.min(20,caixas+1); atualizarNata(); });
-  q('nata-add').addEventListener('click',function(){
-    var n=nataQtd(), c=nataCanela(), id='nata-'+n+'-'+c;
-    var nome=(n===1?'1 pastel de nata':'Caixa de '+n+' pastéis de nata')+', '+c;
-    var l=linha(id); definir(id,nome,NATA[n],(l?l.qtd:0)+caixas,IMG[n]);
-    toast((caixas>1?caixas+' × ':'')+nome+' no pedido'); caixas=1; atualizarNata();
+  ['pasteis','eventos','vinhos','bebidas'].forEach(function(c){ var ul=q('lista-'+c); PRODUTOS.filter(function(p){return p.cat===c;}).forEach(function(p){ ul.appendChild(linhaProduto(p)); }); });
+  document.querySelectorAll('.cats a').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); document.querySelectorAll('.cats a').forEach(function(x){x.classList.remove('ativa');}); a.classList.add('ativa'); var s=q('cat-'+a.dataset.cat); s.scrollIntoView({behavior:'smooth',block:'start'}); }); });
+
+  /* ---------- ficha do produto ---------- */
+  var atual=null, fqtd=1;
+  function tierSel(){ var r=document.querySelector('input[name="f-tier"]:checked'); return r?+r.value:6; }
+  function canelaSel(){ var r=document.querySelector('input[name="f-canela"]:checked'); return r?r.value:'com canela'; }
+  function precoFolha(){ return (atual.tiers?NATA[tierSel()]:atual.preco)*fqtd; }
+  function pintarFolha(){
+    q('folha-qtd').textContent=fqtd; q('folha-preco').textContent=L.brl(precoFolha());
+    if(atual.tiers){ var n=tierSel(); q('folha-img').src=foto(IMG[n]); q('folha-dica').textContent=n===1?'Um pastel, para provar.':n===24?'Caixa de festa: cada pastel a R$ 11,00.':'Cada pastel sai a R$ 11,50 · poupa '+L.brl(12*n-NATA[n])+'.'; }
+  }
+  function abrirFolha(p){
+    atual=p; fqtd=1; q('folha-nome').textContent=p.nome; q('folha-desc').textContent=p.desc||'';
+    q('folha-img').src=p.img?foto(p.img):foto('nata-1'); q('folha-obs').value='';
+    q('folha-tiers').hidden=!p.tiers; q('folha-canela').hidden=!p.tiers;
+    if(p.tiers){ var ch=q('folha-tiers-chips'); ch.innerHTML=''; [1,3,4,6,12,24].forEach(function(n){ var l=document.createElement('label'); l.innerHTML='<input type="radio" name="f-tier" value="'+n+'"'+(n===6?' checked':'')+'><span><b>'+n+'</b><small>'+L.brl(NATA[n])+'</small></span>'; l.querySelector('input').addEventListener('change',pintarFolha); ch.appendChild(l); }); }
+    pintarFolha();
+    q('folha-fundo').hidden=false; q('folha').classList.add('aberta'); q('folha').setAttribute('aria-hidden','false'); document.documentElement.classList.add('folha-aberta');
+    L.rastrear('view_item',{value:p.tiers?NATA[6]:p.preco,items:[{item_id:p.id,item_name:p.nome,price:p.tiers?NATA[6]:p.preco}]});
+  }
+  function fecharFolhas(){ ['folha','folha-morada'].forEach(function(id){ q(id).classList.remove('aberta'); q(id).setAttribute('aria-hidden','true'); }); document.documentElement.classList.remove('folha-aberta'); setTimeout(function(){ if(!document.querySelector('.folha.aberta')) q('folha-fundo').hidden=true; },250); }
+  q('folha-fechar').addEventListener('click',fecharFolhas); q('folha-fundo').addEventListener('click',fecharFolhas);
+  document.querySelectorAll('[data-fechar]').forEach(function(b){ b.addEventListener('click',fecharFolhas); });
+  q('folha-menos').addEventListener('click',function(){ fqtd=Math.max(1,fqtd-1); pintarFolha(); });
+  q('folha-mais').addEventListener('click',function(){ fqtd=Math.min(20,fqtd+1); pintarFolha(); });
+  q('folha-add').addEventListener('click',function(){
+    var id=atual.id, nome=atual.nome, preco=atual.preco, img=atual.img||'';
+    if(atual.tiers){ var n=tierSel(), c=canelaSel(); id='nata-'+n+'-'+c; nome=(n===1?'1 pastel de nata':'Caixa de '+n+' pastéis')+', '+c; preco=NATA[n]; img=IMG[n]; }
+    var obs=q('folha-obs').value.trim(); if(obs){ id+='-'+obs.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,24); }
+    var l=estado.sacola.find(function(x){return x.id===id;});
+    if(l) l.qtd+=fqtd; else estado.sacola.push({id:id,nome:nome,preco:preco,qtd:fqtd,img:img,obs:obs});
+    guardar(); render(); fecharFolhas();
+    toast((fqtd>1?fqtd+' × ':'')+nome+' na sacola');
+    L.rastrear('add_to_cart',{value:preco*fqtd,items:[{item_id:id,item_name:nome,price:preco,quantity:fqtd}]});
   });
-  atualizarNata();
 
-  /* ----- produtos simples: botão que vira stepper ----- */
-  document.querySelectorAll('.prod').forEach(function(p){
-    var slot=p.querySelector('.acao-slot'); if(!slot) return;
-    var id=p.dataset.id, nome=p.dataset.nome, preco=+p.dataset.preco;
-    var img=p.dataset.img||'';
-    function pintar(){
-      var l=linha(id), qtd=l?l.qtd:0;
-      if(!qtd){ slot.innerHTML='<button class="btn btn-linha add" type="button">Adicionar</button>';
-        slot.querySelector('button').addEventListener('click',function(){ definir(id,nome,preco,1,img); toast(nome+' no pedido'); }); }
-      else { slot.innerHTML='<span class="stepper"><button type="button" aria-label="Menos">−</button><b>'+qtd+'</b><button type="button" aria-label="Mais">+</button></span>';
-        var b=slot.querySelectorAll('button');
-        b[0].addEventListener('click',function(){ definir(id,nome,preco,qtd-1,img); });
-        b[1].addEventListener('click',function(){ definir(id,nome,preco,qtd+1,img); }); }
-    }
-    p._pintar=pintar; pintar();
-  });
+  /* ---------- toast ---------- */
+  var tt; function toast(txt){ q('toast-texto').textContent=txt; q('toast').hidden=false; clearTimeout(tt); tt=setTimeout(function(){q('toast').hidden=true;},3200); }
+  q('toast-btn').addEventListener('click',function(){ q('toast').hidden=true; ir('sacola'); });
+  q('sacola-bar-btn').addEventListener('click',function(){ ir('sacola'); });
+  document.querySelectorAll('.cesto').forEach(function(c){ c.addEventListener('click',function(e){ e.preventDefault(); ir('sacola'); }); });
 
-  /* ----- gaveta ----- */
-  var gaveta=q('gaveta'), fundo=q('gaveta-fundo');
-  function abrir(){ fundo.hidden=false; gaveta.classList.add('aberta'); gaveta.setAttribute('aria-hidden','false'); document.documentElement.classList.add('gaveta-aberta'); }
-  function fechar(){ gaveta.classList.remove('aberta'); gaveta.setAttribute('aria-hidden','true'); document.documentElement.classList.remove('gaveta-aberta'); setTimeout(function(){ if(!gaveta.classList.contains('aberta')) fundo.hidden=true; },250); }
-  q('gaveta-fechar').addEventListener('click',fechar); fundo.addEventListener('click',fechar);
-  window.addEventListener('keydown',function(e){ if(e.key==='Escape') fechar(); });
-  ['rever-btn','barra-movel-ver','toast-btn'].forEach(function(id){ q(id).addEventListener('click',function(){ esconderToast(); abrir(); }); });
-  q('vazio-btn').addEventListener('click',function(){ fechar(); raiz.scrollIntoView({behavior:'smooth',block:'start'}); });
-  document.querySelectorAll('.cesto').forEach(function(c){ c.addEventListener('click',function(e){ e.preventDefault(); abrir(); }); });
-  if(location.hash==='#carrinho') setTimeout(abrir,50);
-
-  /* ----- toast ----- */
-  var toastT;
-  function toast(txt){ q('toast-texto').textContent=txt; q('toast').hidden=false; clearTimeout(toastT); toastT=setTimeout(esconderToast,3500); }
-  function esconderToast(){ q('toast').hidden=true; }
-
-  /* ----- entrega / quando / pagamento ----- */
-  function modo(){ return document.querySelector('input[name="modo"]:checked').value; }
-  function quando(){ var v=document.querySelector('input[name="quando"]:checked').value; return v==='outro'?(q('quando-texto').value||'a combinar'):v; }
-  function pagamento(){ return document.querySelector('input[name="pag"]:checked').value; }
-  document.querySelectorAll('input[name="modo"]').forEach(function(i){ i.addEventListener('change',render); });
-  document.querySelectorAll('input[name="quando"]').forEach(function(i){ i.addEventListener('change',function(){ q('campo-quando').hidden=document.querySelector('input[name="quando"]:checked').value!=='outro'; if(!q('campo-quando').hidden) q('quando-texto').focus(); }); });
-  document.querySelectorAll('input[name="pag"]').forEach(function(i){ i.addEventListener('change',function(){
-    var p=pagamento(); q('pag-nota').textContent = p==='Pix' ? 'A chave Pix chega na resposta do WhatsApp. O pedido entra no forno quando o pagamento é confirmado.' :
-      p==='Dinheiro' ? 'Diga nas observações se precisa de troco.' : 'A maquininha vai com a entrega, ou paga no balcão da loja.'; }); });
-
-  /* ----- render ----- */
+  /* ---------- sacola ---------- */
   function render(){
-    var tt=totais(), ent=modo()==='Entrega';
-    var ul=q('linhas'); ul.innerHTML='';
-    pedido.forEach(function(l){
+    var t=totais();
+    var ul=q('sacola-linhas'); ul.innerHTML='';
+    estado.sacola.forEach(function(l){
       var li=document.createElement('li');
       li.innerHTML='<span class="linha-img"></span><span class="linha-info"><b></b><small></small></span><span class="stepper"><button type="button" aria-label="Menos">−</button><b></b><button type="button" aria-label="Mais">+</button></span><span class="linha-preco"></span>';
-      if(l.img){ var im=document.createElement('img'); im.src=foto(l.img); im.alt=''; im.loading='lazy'; li.querySelector('.linha-img').appendChild(im); }
-      li.querySelector('.linha-info b').textContent=l.nome;
-      li.querySelector('.linha-info small').textContent=brl(l.preco)+(l.qtd>1?' × '+l.qtd:'');
-      li.querySelector('.stepper b').textContent=l.qtd;
-      li.querySelector('.linha-preco').textContent=brl(l.preco*l.qtd);
+      if(l.img){ var im=document.createElement('img'); im.src=foto(l.img); im.alt=''; li.querySelector('.linha-img').appendChild(im); }
+      li.querySelector('.linha-info b').textContent=l.nome; li.querySelector('.linha-info small').textContent=(l.obs?l.obs+' · ':'')+L.brl(l.preco)+(l.qtd>1?' × '+l.qtd:'');
+      li.querySelector('.stepper b').textContent=l.qtd; li.querySelector('.linha-preco').textContent=L.brl(l.preco*l.qtd);
       var b=li.querySelectorAll('.stepper button');
-      b[0].addEventListener('click',function(){ definir(l.id,l.nome,l.preco,l.qtd-1,l.img); });
-      b[1].addEventListener('click',function(){ definir(l.id,l.nome,l.preco,l.qtd+1,l.img); });
+      b[0].addEventListener('click',function(){ l.qtd-=1; if(l.qtd<=0) estado.sacola.splice(estado.sacola.indexOf(l),1); guardar(); render(); if(!estado.sacola.length) ir('inicio'); });
+      b[1].addEventListener('click',function(){ l.qtd+=1; guardar(); render(); });
       ul.appendChild(li);
     });
-    var vazio=pedido.length===0;
-    q('vazio').hidden=!vazio; q('passo-itens').hidden=vazio; q('passo-entrega').hidden=vazio; q('passo-pagamento').hidden=vazio; q('gaveta-pe').hidden=vazio;
-    q('gaveta-n').textContent=itens(tt.n);
-    q('subtotal').textContent=brl(tt.t);
-    q('enviar').disabled=vazio;
-    q('campos-morada').hidden=!ent;
-    q('modo-nota').textContent = ent ? 'Entrega em Joinville. Grátis a partir de R$ 250; abaixo disso a taxa é confirmada no WhatsApp.' : 'Rua Otto Boehm, 525 · Atiradores. Seg a sex 09h–22h, dom 10h–22h.';
-    q('taxa-nota').hidden=!ent;
-    var eg=q('entrega-gratis'); eg.hidden=!(ent&&!vazio);
-    if(!eg.hidden){ var p=Math.min(100,Math.round(tt.t/GRATIS*100)); q('barra-fill').style.width=p+'%';
-      q('barra-texto').textContent = tt.t>=GRATIS ? 'Entrega grátis garantida.' : 'Faltam '+brl(GRATIS-tt.t)+' para a entrega grátis.'; }
-    q('sugestao').hidden = vazio || !!linha('moscatel') || !!linha('porto');
-    q('rever').hidden=vazio; q('rever-titulo').textContent=itens(tt.n)+' no pedido';
-    q('rever-sub').textContent=brl(tt.t)+' · '+(ent?'entrega':'retirada na loja');
-    q('barra-movel').hidden=vazio; q('barra-movel-texto').textContent=itens(tt.n)+' · '+brl(tt.t);
-    document.querySelectorAll('.prod').forEach(function(p){ if(p._pintar) p._pintar(); });
+    q('r-subtotal').textContent=L.brl(t.sub); q('r-taxa').textContent=t.taxa?L.brl(t.taxa):'Grátis'; q('r-total').textContent=L.brl(t.total);
+    q('r-nota').textContent = estado.modo==='Retirada' ? 'Retirada na loja: sem taxa.' : t.sub>=GRATIS ? 'Entrega grátis garantida.' : 'Faltam '+L.brl(GRATIS-t.sub)+' para a entrega grátis.';
+    q('sacola-bar').hidden=!(ecraDoHash()==='inicio'&&estado.sacola.length);
+    q('sacola-bar-n').textContent=t.n+(t.n===1?' item':' itens'); q('sacola-bar-total').textContent=L.brl(t.total);
+    q('pag-itens').textContent=t.n+(t.n===1?' item':' itens')+' · '+(estado.modo==='Retirada'?'retirada':'entrega'); q('pag-total').textContent=L.brl(t.total);
+    document.querySelectorAll('.prod-row').forEach(function(li){ var n=0; estado.sacola.forEach(function(l){ if(l.id===li.dataset.id||l.id.indexOf(li.dataset.id+'-')===0||(li.dataset.id==='nata'&&l.id.indexOf('nata-')===0)) n+=l.qtd; }); var s=li.querySelector('.prod-qtd'); s.hidden=!n; s.textContent=n; });
+    document.querySelectorAll('.cesto-n').forEach(function(b){ b.textContent=t.n; b.hidden=!t.n; });
+    q('topo-modo').textContent=estado.modo==='Retirada'?'Retirar em':'Entregar em';
+    q('topo-morada').textContent=estado.modo==='Retirada'?'Rua Otto Boehm, 525 · loja':(estado.morada.rua+' · '+estado.morada.bairro);
+    q('topo-eta').textContent=estado.modo==='Retirada'?'15 min':estado.morada.eta;
+    q('sacola-eta').textContent=estado.modo==='Retirada'?'Retirada em 15 min':'Entrega em '+estado.morada.eta;
   }
-  q('sugestao-btn').addEventListener('click',function(){ definir('moscatel','Moscatel de Setúbal Reserva (garrafa)',199,1,'moscatel'); });
+  q('ir-endereco').addEventListener('click',function(){ L.rastrear('begin_checkout',{value:totais().total,items:itensGA()}); ir('endereco'); });
 
-  /* ----- enviar ----- */
-  q('enviar').addEventListener('click',function(){
-    if(!pedido.length) return;
-    var tt=totais(), ent=modo()==='Entrega';
-    var linhas=pedido.map(function(l){ return '• '+(l.qtd>1?l.qtd+' × ':'')+l.nome+' — '+brl(l.preco*l.qtd); });
-    var morada=[q('rua').value,q('bairro').value,q('compl').value].filter(Boolean).join(', ');
-    var msg=['Olá! Quero fazer um pedido na Lusinatas:','',linhas.join('\n'),'','Subtotal: '+brl(tt.t),
-      ent ? 'Entrega em: '+(morada||'(morada a combinar)') : 'Retirada na loja',
-      'Quando: '+quando(), 'Pagamento: '+pagamento(),
-      q('nome').value?'Nome: '+q('nome').value:'', q('obs').value?'Obs: '+q('obs').value:''].filter(function(x){return x!=='';}).join('\n');
-    window.open(WA+'?text='+encodeURIComponent(msg),'_blank','noopener');
+  /* ---------- endereço ---------- */
+  function pintarMoradas(){
+    ['moradas','moradas-topo'].forEach(function(id){ var ul=q(id); ul.innerHTML=''; MORADAS_DEMO.forEach(function(m,i){
+      var li=document.createElement('li'); li.innerHTML='<button type="button"><b></b><small></small><em></em></button>';
+      li.querySelector('b').textContent=m.rua; li.querySelector('small').textContent=m.bairro+' · '+m.compl; li.querySelector('em').textContent=m.eta;
+      if(estado.morada.rua===m.rua) li.classList.add('sel');
+      li.querySelector('button').addEventListener('click',function(){ estado.morada=m; estado.modo='Entrega'; q('modo-entrega').checked=true; q('rua').value=m.rua; q('bairro').value=m.bairro; q('cep').value=m.cep; q('compl').value=m.compl; guardar(); render(); pintarMoradas(); calcularEta(); fecharFolhas(); });
+      ul.appendChild(li); }); });
+  }
+  q('morada-btn').addEventListener('click',function(){ pintarMoradas(); q('folha-fundo').hidden=false; q('folha-morada').classList.add('aberta'); q('folha-morada').setAttribute('aria-hidden','false'); document.documentElement.classList.add('folha-aberta'); });
+  document.querySelectorAll('input[name="modo"]').forEach(function(i){ i.addEventListener('change',function(){ estado.modo=i.value; q('bloco-entrega').hidden=estado.modo==='Retirada'; q('bloco-retirada').hidden=estado.modo!=='Retirada'; guardar(); render(); }); });
+  var etaT; function calcularEta(){ q('eta-texto').textContent='A calcular a partir da sua morada…'; clearTimeout(etaT); etaT=setTimeout(function(){ var r=q('rua').value.trim(); var eta=r?(r===MORADAS_DEMO[0].rua?'15 min':'25–35 min'):'—'; q('eta-texto').textContent='Chega em '+eta+' · taxa '+(totais().sub>=GRATIS?'grátis':L.brl(TAXA)); if(r){ estado.morada={rua:r,bairro:q('bairro').value||'Joinville',cep:q('cep').value,compl:q('compl').value,eta:eta}; guardar(); render(); } },700); }
+  ['rua','bairro','cep','compl'].forEach(function(id){ q(id).addEventListener('input',calcularEta); });
+  q('ir-entrar').addEventListener('click',function(){
+    if(estado.modo==='Entrega'&&!q('rua').value.trim()){ q('rua').focus(); toast('Diga a rua e o número'); return; }
+    L.rastrear('add_shipping_info',{value:totais().total,shipping_tier:estado.modo==='Retirada'?'retirada':'voa-delivery',items:itensGA()});
+    if(estado.cliente){ ir('pagamento'); } else ir('entrar');
   });
-  render();
+
+  /* ---------- entrar ---------- */
+  q('pedir-codigo').addEventListener('click',function(){
+    if(!q('nome').value.trim()||q('tel').value.replace(/\D/g,'').length<10){ toast('Nome e WhatsApp, por favor'); return; }
+    q('entrar-tel').hidden=true; q('entrar-codigo').hidden=false; q('codigo').querySelector('input').focus();
+  });
+  q('codigo').querySelectorAll('input').forEach(function(inp,i,all){ inp.addEventListener('input',function(){ if(inp.value&&all[i+1]) all[i+1].focus(); }); });
+  q('reenviar').addEventListener('click',function(){ toast('Código reenviado (demo)'); });
+  q('confirmar-codigo').addEventListener('click',function(){
+    estado.cliente={nome:q('nome').value.trim(),tel:q('tel').value.trim()}; guardar();
+    L.rastrear('login',{method:'whatsapp-otp'}); toast('Olá, '+estado.cliente.nome.split(' ')[0]+'!'); ir('pagamento');
+  });
+
+  /* ---------- pix ---------- */
+  var pixT, pixConf, pixFim;
+  function iniciarPix(){
+    clearInterval(pixT); clearTimeout(pixConf);
+    var t=totais(); var codigo='00020126580014BR.GOV.BCB.PIX0136LUSINATAS-DEMO-'+Date.now().toString(36)+'5204000053039865406'+t.total.toFixed(2)+'5802BR5909LUSINATAS6009JOINVILLE';
+    q('pix-qr').innerHTML=L.qrFalso(codigo,220); q('pix').dataset.codigo=codigo;
+    q('pix-estado').innerHTML='<span class="pulsar"></span> A aguardar pagamento…'; q('pix-estado').classList.remove('ok');
+    pixFim=Date.now()+5*60*1000;
+    pixT=setInterval(function(){ var s=Math.max(0,Math.round((pixFim-Date.now())/1000)); q('pix-tempo').textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2); if(!s) clearInterval(pixT); },250);
+    L.rastrear('add_payment_info',{value:t.total,payment_type:'pix',items:itensGA()});
+    pixConf=setTimeout(pagamentoConfirmado,8000);
+  }
+  q('pix-copiar').addEventListener('click',function(){ var c=q('pix').dataset.codigo||''; try{ navigator.clipboard.writeText(c); }catch(e){} toast('Código Pix copiado'); });
+  function pagamentoConfirmado(){
+    clearInterval(pixT); var t=totais();
+    q('pix-estado').innerHTML='✓ Pagamento confirmado'; q('pix-estado').classList.add('ok');
+    var pedido={id:'LN-'+String(Math.floor(1000+Math.random()*9000)),quando:new Date().toISOString(),itens:estado.sacola,modo:estado.modo,morada:estado.morada,cliente:estado.cliente,sub:t.sub,taxa:t.taxa,total:t.total,pagamento:'Pix',canal:L.canal()};
+    L.gravar('lusinatas-pedido-atual',pedido);
+    L.rastrear('purchase',{transaction_id:pedido.id,value:t.total,shipping:t.taxa,currency:'BRL',items:itensGA()});
+    estado.sacola=[]; guardar(); render();
+    setTimeout(function(){ location.href='pedido.html'; },1200);
+  }
+
+  /* ---------- arranque ---------- */
+  q('bloco-entrega').hidden=estado.modo==='Retirada'; q('bloco-retirada').hidden=estado.modo!=='Retirada';
+  if(estado.modo==='Retirada') q('modo-retirada').checked=true;
+  if(estado.morada){ q('rua').value=estado.morada.rua||''; q('bairro').value=estado.morada.bairro||''; q('cep').value=estado.morada.cep||''; q('compl').value=estado.morada.compl||''; }
+  if(estado.cliente){ q('nome').value=estado.cliente.nome; q('tel').value=estado.cliente.tel; }
+  pintarMoradas(); render(); calcularEta(); mostrar();
+  L.rastrear('view_item_list',{item_list_name:'loja',items:PRODUTOS.slice(0,5).map(function(p){return {item_id:p.id,item_name:p.nome};})});
 })();
 </script>
-<nav class="pn" aria-label="Páginas"><div class="wrap"><a class="pn-ant" href="lojas.html"><small>Anterior</small><span>Onde estamos</span></a><a class="pn-seg" href="franquia.html"><small>Seguinte</small><span>Franquia</span></a></div></nav>
 </main>
 <footer class="rodape">
   <div class="wrap">
