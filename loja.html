@@ -142,8 +142,27 @@
     <div class="pag-resumo"><span id="pag-itens">0 itens</span><b id="pag-total">R$ 0,00</b></div>
     <div class="chips chips-3 pag-chips">
       <label><input type="radio" name="pag" value="Pix" checked><span>Pix</span></label>
-      <label><input type="radio" name="pag" value="Cartão" disabled><span>Cartão <small>em breve</small></span></label>
+      <label><input type="radio" name="pag" value="Cartão"><span>Cartão</span></label>
       <label><input type="radio" name="pag" value="Na entrega" disabled><span>Na entrega <small>em breve</small></span></label>
+    </div>
+    <div class="cartao" id="cartao" hidden>
+      <div class="cartao-visual" id="cartao-visual">
+        <span class="cv-marca" id="cv-marca">cartão</span>
+        <span class="cv-chip"></span>
+        <b class="cv-numero" id="cv-numero">•••• •••• •••• ••••</b>
+        <span class="cv-nome" id="cv-nome">NOME NO CARTÃO</span>
+        <span class="cv-val" id="cv-val">MM/AA</span>
+      </div>
+      <div class="campos">
+        <label class="campo campo-2"><span class="label">Número do cartão</span><input type="text" id="c-num" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000" value="4111 1111 1111 1111"></label>
+        <label class="campo campo-2"><span class="label">Nome como está no cartão</span><input type="text" id="c-nome" autocomplete="off" placeholder="Nome e sobrenome" value="ANA SOUZA"></label>
+        <label class="campo"><span class="label">Validade</span><input type="text" id="c-val" inputmode="numeric" autocomplete="off" placeholder="MM/AA" value="12/29"></label>
+        <label class="campo"><span class="label">CVV</span><input type="text" id="c-cvv" inputmode="numeric" autocomplete="off" placeholder="123" value="123" maxlength="4"></label>
+      </div>
+      <label class="guardar-cartao"><input type="checkbox" id="c-guardar" checked><span>Guardar para a próxima compra (um toque)</span></label>
+      <p class="mini-nota">Demonstração: número de teste, nada é cobrado. Na loja real o cartão vai direto ao banco (Mercado Pago), nunca passa por nós.</p>
+      <button class="btn btn-ouro btn-largo" type="button" id="c-pagar">Pagar <b id="c-total">R$ 0,00</b></button>
+      <p class="pix-estado" id="c-estado" hidden><span class="pulsar"></span> A autorizar com o banco…</p>
     </div>
     <div class="pix" id="pix">
       <div class="pix-qr" id="pix-qr"></div>
@@ -202,7 +221,7 @@
     document.querySelectorAll('.ecra').forEach(function(s){ s.hidden=s.dataset.ecra!==e; });
     q('add-bar').hidden=e!=='inicio';
     window.scrollTo(0,0);
-    if(e==='pagamento') iniciarPix();
+    if(e==='pagamento'){ q('c-pagar').disabled=false; q('c-estado').hidden=true; q('c-estado').classList.remove('ok'); mostrarPag(); }
     if(e==='sacola') L.rastrear('view_cart',{value:totais().sub,items:itensGA()});
   }
   window.addEventListener('hashchange',mostrar);
@@ -321,6 +340,27 @@
   });
 
   /* ---------- pix ---------- */
+  /* ---------- cartão (demo) ---------- */
+  function pagSel(){ var r=document.querySelector('input[name="pag"]:checked'); return r?r.value:'Pix'; }
+  function mostrarPag(){ var c=pagSel()==='Cartão'; q('cartao').hidden=!c; q('pix').hidden=c; if(c){ clearTimeout(pixConf); clearInterval(pixT); pintarCartao(); } else iniciarPix(); }
+  document.querySelectorAll('input[name="pag"]').forEach(function(i){ i.addEventListener('change',mostrarPag); });
+  function marca(n){ n=n.replace(/\D/g,''); if(/^4/.test(n)) return 'Visa'; if(/^5[1-5]|^2[2-7]/.test(n)) return 'Mastercard'; if(/^(4011|4312|4389|4514|4573|5041|5066|5067|5090|6277|6362|6363|6504|6505|6516|6550)/.test(n)) return 'Elo'; if(/^3[47]/.test(n)) return 'Amex'; if(/^6062|^3841/.test(n)) return 'Hipercard'; return n?'cartão':'cartão'; }
+  function pintarCartao(){
+    var n=q('c-num').value.replace(/\D/g,'').slice(0,16); var grupos=n.match(/.{1,4}/g)||[]; q('c-num').value=grupos.join(' ');
+    q('cv-numero').textContent=(grupos.concat(['••••','••••','••••','••••']).slice(0,4)).map(function(g){return (g+'••••').slice(0,4);}).join(' ');
+    q('cv-marca').textContent=marca(n); q('cartao-visual').dataset.marca=marca(n).toLowerCase();
+    q('cv-nome').textContent=(q('c-nome').value||'NOME NO CARTÃO').toUpperCase();
+    var v=q('c-val').value.replace(/\D/g,'').slice(0,4); q('c-val').value=v.length>2?v.slice(0,2)+'/'+v.slice(2):v; q('cv-val').textContent=q('c-val').value||'MM/AA';
+    q('c-total').textContent=L.brl(totais().total);
+  }
+  ['c-num','c-nome','c-val','c-cvv'].forEach(function(id){ q(id).addEventListener('input',pintarCartao); });
+  q('c-pagar').addEventListener('click',function(){
+    var n=q('c-num').value.replace(/\D/g,''); if(n.length<16||q('c-val').value.length<5||q('c-cvv').value.length<3||!q('c-nome').value.trim()){ toast('Confira os dados do cartão'); return; }
+    q('c-pagar').disabled=true; q('c-estado').hidden=false; q('c-estado').innerHTML='<span class="pulsar"></span> A autorizar com o banco…';
+    L.rastrear('add_payment_info',{value:totais().total,payment_type:'cartao-'+marca(n).toLowerCase(),items:itensGA()});
+    setTimeout(function(){ q('c-estado').innerHTML='✓ Pagamento aprovado · '+marca(n)+' final '+n.slice(-4); q('c-estado').classList.add('ok'); pagamentoConfirmado('Cartão '+marca(n)+' final '+n.slice(-4)); },2200);
+  });
+
   var pixT, pixConf, pixFim;
   function iniciarPix(){
     clearInterval(pixT); clearTimeout(pixConf);
@@ -330,13 +370,13 @@
     pixFim=Date.now()+5*60*1000;
     pixT=setInterval(function(){ var s=Math.max(0,Math.round((pixFim-Date.now())/1000)); q('pix-tempo').textContent=Math.floor(s/60)+':'+('0'+s%60).slice(-2); if(!s) clearInterval(pixT); },250);
     L.rastrear('add_payment_info',{value:t.total,payment_type:'pix',items:itensGA()});
-    pixConf=setTimeout(pagamentoConfirmado,8000);
+    pixConf=setTimeout(function(){ pagamentoConfirmado('Pix'); },8000);
   }
   q('pix-copiar').addEventListener('click',function(){ var c=q('pix').dataset.codigo||''; try{ navigator.clipboard.writeText(c); }catch(e){} toast('Código Pix copiado'); });
-  function pagamentoConfirmado(){
-    clearInterval(pixT); var t=totais();
-    q('pix-estado').innerHTML='✓ Pagamento confirmado'; q('pix-estado').classList.add('ok');
-    var pedido={id:'LN-'+String(Math.floor(1000+Math.random()*9000)),quando:new Date().toISOString(),itens:estado.sacola,modo:estado.modo,morada:estado.morada,cliente:estado.cliente,sub:t.sub,taxa:t.taxa,total:t.total,pagamento:'Pix',canal:L.canal()};
+  function pagamentoConfirmado(metodo){
+    clearInterval(pixT); clearTimeout(pixConf); var t=totais(); metodo=metodo||'Pix';
+    if(metodo==='Pix'){ q('pix-estado').innerHTML='✓ Pagamento confirmado'; q('pix-estado').classList.add('ok'); }
+    var pedido={id:'LN-'+String(Math.floor(1000+Math.random()*9000)),quando:new Date().toISOString(),itens:estado.sacola,modo:estado.modo,morada:estado.morada,cliente:estado.cliente,sub:t.sub,taxa:t.taxa,total:t.total,pagamento:metodo,canal:L.canal()};
     L.gravar('lusinatas-pedido-atual',pedido);
     L.rastrear('purchase',{transaction_id:pedido.id,value:t.total,shipping:t.taxa,currency:'BRL',items:itensGA()});
     estado.sacola=[]; guardar(); render();

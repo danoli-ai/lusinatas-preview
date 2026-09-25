@@ -37,7 +37,7 @@
     </div>
 
     <ol class="linha-estado" id="linha-estado">
-      <li data-e="recebido"><i></i><b>Recebido</b><small>Pagamento Pix confirmado</small></li>
+      <li data-e="recebido"><i></i><b>Recebido</b><small id="ped-pag-small">Pagamento confirmado</small></li>
       <li data-e="confirmado"><i></i><b>Confirmado pela loja</b><small>Entrou no sistema da cozinha</small></li>
       <li data-e="forno"><i></i><b>No forno</b><small>Fornada a sair</small></li>
       <li data-e="caminho"><i></i><b>Saiu para entrega</b><small>Estafeta a caminho</small></li>
@@ -69,7 +69,7 @@
       <div class="resumo">
         <div><span>Subtotal</span><b id="ped-sub-v">R$ 0,00</b></div>
         <div><span>Taxa de entrega</span><b id="ped-taxa">Grátis</b></div>
-        <div class="total"><span>Total pago (Pix)</span><b id="ped-total">R$ 0,00</b></div>
+        <div class="total"><span id="ped-pag-label">Total pago</span><b id="ped-total">R$ 0,00</b></div>
       </div>
       <p class="mini-nota" id="ped-morada"></p>
     </section>
@@ -92,13 +92,13 @@
   if(!pedido){ pedido={id:'LN-4821',itens:[{nome:'Caixa de 6 pastéis, com canela',preco:69,qtd:1,img:'nata-6'},{nome:'Moscatel de Setúbal Reserva (garrafa)',preco:199,qtd:1,img:'moscatel'}],modo:'Entrega',morada:{rua:'Rua Blumenau, 1200',bairro:'América',eta:'25–35 min'},cliente:{nome:'Ana'},sub:268,taxa:0,total:268}; }
   retirada=pedido.modo==='Retirada';
   ETAPAS=[
-    {e:'recebido',titulo:'Recebemos o seu pedido',sub:'A loja vai confirmar num instante.',eta:retirada?'15 min':(pedido.morada.eta||'25–35 min'),wa:'Olá'+(pedido.cliente?', '+pedido.cliente.nome.split(' ')[0]:'')+'! Recebemos o seu pedido '+pedido.id+' na Lusinatas. Pagamento Pix confirmado ✓'},
+    {e:'recebido',titulo:'Recebemos o seu pedido',sub:'A loja vai confirmar num instante.',eta:retirada?'15 min':(pedido.morada.eta||'25–35 min'),wa:'Olá'+(pedido.cliente?', '+pedido.cliente.nome.split(' ')[0]:'')+'! Recebemos o seu pedido '+pedido.id+' na Lusinatas. Pagamento '+(pedido.pagamento||'Pix')+' confirmado ✓'},
     {e:'confirmado',titulo:'A loja confirmou',sub:'O pedido entrou na cozinha.',eta:retirada?'12 min':'25–30 min',wa:'Pedido '+pedido.id+' confirmado pela loja. Vamos começar a sua fornada 🔥'},
     {e:'forno',titulo:'No forno',sub:'A sua fornada está a sair.',eta:retirada?'8 min':'20–25 min',wa:'As suas natas estão no forno. Saem em poucos minutos, quentinhas.'},
     {e:'caminho',titulo:retirada?'Pronto para retirar':'Saiu para entrega',sub:retirada?'Está no balcão à sua espera.':'O Carlos, da Voa, já vai a caminho.',eta:retirada?'agora':'12–18 min',wa:retirada?'O seu pedido '+pedido.id+' está pronto no balcão da Rua Otto Boehm, 525.':'Saiu para entrega com o Carlos (Voa Delivery). Chega em 12–18 min. Acompanhe: lusinatas.com/pedido'},
     {e:'entregue',titulo:retirada?'Retirado':'Entregue',sub:'Bom apetite! Duas mordidas e um café.',eta:'—',wa:'Entregue ✓ Obrigado por pedir na Lusinatas. Como estava a nata? Responda com uma nota de 1 a 5.'}
   ];
-  q('ped-id').textContent=pedido.id;
+  q('ped-id').textContent=pedido.id; q('ped-pag-small').textContent='Pagamento '+(pedido.pagamento||'Pix')+' confirmado'; q('ped-pag-label').textContent='Total pago ('+(pedido.pagamento||'Pix')+')';
   var ul=q('ped-itens'); ul.innerHTML=''; pedido.itens.forEach(function(l){ var li=document.createElement('li'); li.innerHTML='<span class="linha-img"></span><span class="linha-info"><b></b><small></small></span><span class="linha-preco"></span>'; if(l.img){ var im=document.createElement('img'); im.src=foto(l.img); im.alt=''; li.querySelector('.linha-img').appendChild(im); } li.querySelector('b').textContent=(l.qtd>1?l.qtd+' × ':'')+l.nome; li.querySelector('small').textContent=L.brl(l.preco)+(l.qtd>1?' × '+l.qtd:''); li.querySelector('.linha-preco').textContent=L.brl(l.preco*l.qtd); ul.appendChild(li); });
   q('ped-sub-v').textContent=L.brl(pedido.sub); q('ped-taxa').textContent=pedido.taxa?L.brl(pedido.taxa):'Grátis'; q('ped-total').textContent=L.brl(pedido.total);
   q('ped-morada').textContent=retirada?'Retirada na loja · Rua Otto Boehm, 525 · Atiradores':'Entrega em '+pedido.morada.rua+' · '+pedido.morada.bairro;

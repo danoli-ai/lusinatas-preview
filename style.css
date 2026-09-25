@@ -455,6 +455,22 @@ html.folha-aberta{overflow:hidden}
 .pulsar{width:10px;height:10px;border-radius:50%;background:var(--ouro);animation:pulsa 1.2s ease-in-out infinite}
 @keyframes pulsa{0%,100%{transform:scale(.7);opacity:.6}50%{transform:scale(1.2);opacity:1}}
 
+/* cartão (demo) */
+.cartao{display:grid;gap:.9rem}
+.cartao[hidden],.pix[hidden]{display:none}
+.cartao-visual{position:relative;aspect-ratio:1.586;border-radius:16px;background:linear-gradient(135deg,#0B3A73,#002855 55%,#001833);color:var(--claro);padding:1rem 1.1rem;display:grid;grid-template-rows:auto 1fr auto auto;box-shadow:var(--sombra);overflow:hidden;max-width:360px;width:100%;margin-inline:auto}
+.cartao-visual::before{content:"";position:absolute;inset:0;background-image:var(--azulejo);background-size:56px 56px;opacity:.08;filter:brightness(2.4)}
+.cv-marca{justify-self:end;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;color:var(--nata)}
+.cv-chip{width:38px;height:28px;border-radius:6px;background:linear-gradient(135deg,#F3D27A,#B8862B);align-self:center}
+.cv-numero{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.15rem;letter-spacing:.12em;font-weight:500}
+.cv-nome{font-size:.75rem;letter-spacing:.08em;opacity:.9}
+.cv-val{position:absolute;right:1.1rem;bottom:1rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;opacity:.9}
+.cartao-visual[data-marca="visa"] .cv-marca{color:#fff}
+.cartao-visual[data-marca="mastercard"] .cv-marca{color:#F79E1B}
+.cartao-visual[data-marca="elo"] .cv-marca{color:#FFD400}
+.guardar-cartao{display:flex;gap:.6rem;align-items:center;font-size:.9rem}
+.guardar-cartao input{width:18px;height:18px;accent-color:var(--navy)}
+#c-pagar b{margin-left:.3rem}
 /* pedido (acompanhar) */
 .ped-estado{display:grid;gap:.4rem;padding:.4rem 0}
 .ped-estado h1{font-size:1.7rem}
