@@ -623,6 +623,12 @@ html.folha-aberta{overflow:hidden}
 .linha-loja img{width:70px;height:auto;background:var(--navy);padding:6px 8px;border-radius:8px}
 .linha-loja b{color:var(--texto);margin-right:.3rem}
 
+.retomar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:.8rem;text-align:left;width:100%;background:var(--navy);color:var(--claro);border:0;border-radius:14px;padding:.75rem 1rem;font:inherit;cursor:pointer;margin-top:.8rem;box-shadow:var(--sombra)}
+.retomar[hidden]{display:none}
+.retomar span{display:grid;line-height:1.25}
+.retomar b{font-size:1rem}
+.retomar small{font-size:.8rem;opacity:.85}
+.retomar em{font-style:normal;font-weight:800;color:var(--nata);white-space:nowrap}
 /* barra de adicionar (fixa em baixo, largura da app) */
 .add-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(480px,100%);z-index:25;display:grid;gap:.45rem;padding:.6rem var(--gutter);padding-bottom:calc(.7rem + env(safe-area-inset-bottom,0px));background:var(--papel);border-top:1px solid var(--linha);box-shadow:0 -12px 30px -18px rgba(0,0,0,.35)}
 .add-bar[hidden]{display:none}

@@ -29,6 +29,7 @@
 
   <!-- ===== ecrã: loja ===== -->
   <section class="ecra ecra-loja" data-ecra="inicio">
+    <button type="button" class="retomar" id="retomar" hidden><span><b id="retomar-n">Continuar o pedido</b><small id="retomar-sub">2 itens · R$ 76,90 · deixado há 40 min</small></span><em>Retomar →</em></button>
     <header class="app-topo">
       <button type="button" class="morada-btn" id="morada-btn" aria-label="Mudar endereço de entrega">
         <small id="topo-modo">Entregar em</small>
@@ -379,16 +380,39 @@
     var pedido={id:'LN-'+String(Math.floor(1000+Math.random()*9000)),quando:new Date().toISOString(),itens:estado.sacola,modo:estado.modo,morada:estado.morada,cliente:estado.cliente,sub:t.sub,taxa:t.taxa,total:t.total,pagamento:metodo,canal:L.canal()};
     L.gravar('lusinatas-pedido-atual',pedido);
     L.rastrear('purchase',{transaction_id:pedido.id,value:t.total,shipping:t.taxa,currency:'BRL',items:itensGA()});
-    estado.sacola=[]; guardar(); render();
+    comprou=true; estado.sacola=[]; estado.abandono=null; guardar(); render();
     setTimeout(function(){ location.href='pedido.html'; },1200);
   }
+
+  /* ---------- carrinho abandonado (deteção + retoma) ---------- */
+  var comprou=false, abandonoMarcado=false;
+  function passoAtual(){ return ecraDoHash(); }
+  function marcarAbandono(){
+    if(comprou||abandonoMarcado||!estado.sacola.length) return;
+    abandonoMarcado=true; var t=totais();
+    estado.abandono={quando:Date.now(),passo:passoAtual(),valor:t.total,n:t.n}; guardar();
+    L.rastrear('cart_abandoned',{value:t.total,step:passoAtual(),items:itensGA()});
+  }
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden') marcarAbandono(); });
+  window.addEventListener('pagehide',marcarAbandono);
+  function mostrarRetoma(){
+    var a=estado.abandono; var b=q('retomar');
+    if(!a||!estado.sacola.length||passoAtual()!=='inicio'){ b.hidden=true; return; }
+    var min=Math.max(1,Math.round((Date.now()-a.quando)/60000)); var t=totais();
+    q('retomar-sub').textContent=t.n+(t.n===1?' item':' itens')+' · '+L.brl(t.total)+' · deixado há '+(min<60?min+' min':Math.round(min/60)+' h');
+    b.hidden=false;
+  }
+  q('retomar').addEventListener('click',function(){
+    var a=estado.abandono||{}; L.rastrear('cart_recovered',{value:totais().total,step:a.passo||'inicio',items:itensGA()});
+    estado.abandono=null; guardar(); q('retomar').hidden=true; ir(a.passo&&a.passo!=='inicio'?a.passo:'sacola');
+  });
 
   /* ---------- arranque ---------- */
   q('bloco-entrega').hidden=estado.modo==='Retirada'; q('bloco-retirada').hidden=estado.modo!=='Retirada';
   if(estado.modo==='Retirada') q('modo-retirada').checked=true;
   if(estado.morada){ q('rua').value=estado.morada.rua||''; q('bairro').value=estado.morada.bairro||''; q('cep').value=estado.morada.cep||''; q('compl').value=estado.morada.compl||''; }
   if(estado.cliente){ q('nome').value=estado.cliente.nome; q('tel').value=estado.cliente.tel; }
-  pintarMoradas(); render(); calcularEta(); mostrar();
+  pintarMoradas(); render(); calcularEta(); mostrar(); mostrarRetoma();
   L.rastrear('view_item',{item_list_name:'loja',value:NATA[6],items:[{item_id:'nata',item_name:'Pastel de nata',price:12}]});
 })();
 </script>
